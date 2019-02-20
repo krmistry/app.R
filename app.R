@@ -12,7 +12,9 @@ library(RColorBrewer)
 library(tidyr)
 library(dplyr)
 
-data <- read.csv("~/Desktop/Raw Data/Hilborn Lab/RAM Files (v4.44)/dynamic stock status/SummaryData.csv", header=T)
+myFile <- "https://raw.githubusercontent.com/krmistry/dynamic_kobe/master/SummaryData.csv"
+data <- read.csv(myFile)
+#data <- read.csv("~/Desktop/Raw Data/Hilborn Lab/RAM Files (v4.44)/dynamic stock status/SummaryData.csv", header=T)
 data$Region <- as.character(data$Region)
 data1 <- data[which(data$Year >= 1950),] 
 split <- split(data1, data1$Region)
